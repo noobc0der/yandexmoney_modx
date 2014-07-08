@@ -1,0 +1,93 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Snippets' => 
+    array (
+      '529008b98f3a67d8d31df451705421ce' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":62,"source":1,"property_preprocess":0,"name":"YandexMoney","description":"","editor_type":0,"category":24,"cache_type":0,"snippet":"$eventName = $modx->event->name;\\n$_isAdmin = ($modx->user->sudo == 1);\\n\\nif(!defined(\'YANDEXMONEY_PATH\')) define(\'YANDEXMONEY_PATH\', MODX_CORE_PATH.\\"components\\/yandexmoney\\/\\");\\nrequire_once YANDEXMONEY_PATH.\'model\\/yandexmoney.class.php\';\\n\\n$ym = new Yandexmoney($modx, $scriptProperties);\\n\\nif(!empty($_SESSION[\'shk_lastOrder\']) && !empty($_SESSION[\'shk_lastOrder\'][\'id\'])){\\n    $ym->pay_method = !empty($_SESSION[\'shk_lastOrder\'][\'payment\']) ? $_SESSION[\'shk_lastOrder\'][\'payment\'] : \'\';\\n    $order_id = (int)$_SESSION[\'shk_lastOrder\'][\'id\'];    \\n}\\nif (!empty($_POST[\'payment\'])){\\n\\t$ym->pay_method = $_POST[\'payment\'];\\n}\\n\\nif ($scriptProperties[\'action\']==\'showMethods\') {\\n\\t$org_mode = ($scriptProperties[\'mode\'] == 2);\\n\\t$output = $ym->getSelectHtml();\\n\\treturn $output;\\n}","locked":0,"properties":"a:13:{s:12:\\"method_cards\\";a:7:{s:4:\\"name\\";s:12:\\"method_cards\\";s:4:\\"desc\\";s:108:\\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u0435\\u0442\\u043e\\u0434 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b - \\u0431\\u0430\\u043d\\u043a\\u043e\\u0432\\u0441\\u043a\\u0438\\u0435 \\u043a\\u0430\\u0440\\u0442\\u044b VISA, MasterCard, Maestro\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:11:\\"method_cash\\";a:7:{s:4:\\"name\\";s:11:\\"method_cash\\";s:4:\\"desc\\";s:163:\\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b - \\u043d\\u0430\\u043b\\u0438\\u0447\\u043d\\u044b\\u043c\\u0438 \\u0432 \\u043a\\u0430\\u0441\\u0441\\u0430\\u0445 \\u0438 \\u0442\\u0435\\u0440\\u043c\\u0438\\u043d\\u0430\\u043b\\u0430\\u0445 \\u043f\\u0430\\u0440\\u0442\\u043d\\u0435\\u0440\\u043e\\u0432 (\\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0434\\u043b\\u044f \\u044e\\u0440\\u043b\\u0438\\u0446)\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:13:\\"method_mobile\\";a:7:{s:4:\\"name\\";s:13:\\"method_mobile\\";s:4:\\"desc\\";s:151:\\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u0435\\u0442\\u043e\\u0434 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b - \\u043e\\u043f\\u043b\\u0430\\u0442\\u0430 \\u0441\\u043e \\u0441\\u0447\\u0435\\u0442\\u0430 \\u043c\\u043e\\u0431\\u0438\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u0442\\u0435\\u043b\\u0435\\u0444\\u043e\\u043d\\u0430 (\\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0434\\u043b\\u044f \\u044e\\u0440\\u043b\\u0438\\u0446)?\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:9:\\"method_wm\\";a:7:{s:4:\\"name\\";s:9:\\"method_wm\\";s:4:\\"desc\\";s:129:\\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u0435\\u0442\\u043e\\u0434 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b - \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u0430\\u044f \\u0432\\u0430\\u043b\\u044e\\u0442\\u0430 WebMoney (\\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0434\\u043b\\u044f \\u044e\\u0440\\u043b\\u0438\\u0446)?\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:9:\\"method_ym\\";a:7:{s:4:\\"name\\";s:9:\\"method_ym\\";s:4:\\"desc\\";s:115:\\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b - \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u0430\\u044f \\u0432\\u0430\\u043b\\u044e\\u0442\\u0430 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441.\\u0414\\u0435\\u043d\\u044c\\u0433\\u0438?\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:4:\\"mode\\";a:7:{s:4:\\"name\\";s:4:\\"mode\\";s:4:\\"desc\\";s:45:\\"\\u0412\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0441\\u043f\\u043e\\u0441\\u043e\\u0431\\u044b \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b:\\";s:4:\\"type\\";s:4:\\"list\\";s:7:\\"options\\";a:2:{i:0;a:2:{s:4:\\"text\\";s:108:\\"\\u041d\\u0430 \\u0441\\u0447\\u0435\\u0442 \\u0444\\u0438\\u0437\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430 \\u0432 \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u043e\\u0439 \\u0432\\u0430\\u043b\\u044e\\u0442\\u0435 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441.\\u0414\\u0435\\u043d\\u0435\\u0433\\";s:5:\\"value\\";s:1:\\"1\\";}i:1;a:2:{s:4:\\"text\\";s:131:\\"\\u041d\\u0430 \\u0440\\u0430\\u0441\\u0447\\u0435\\u0442\\u043d\\u044b\\u0439 \\u0441\\u0447\\u0435\\u0442 \\u043e\\u0440\\u0433\\u0430\\u043d\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0441 \\u0437\\u0430\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u0438\\u0435\\u043c \\u0434\\u043e\\u0433\\u043e\\u0432\\u043e\\u0440\\u0430 \\u0441 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441.\\u0414\\u0435\\u043d\\u044c\\u0433\\u0430\\u043c\\u0438\\";s:5:\\"value\\";s:1:\\"2\\";}}s:5:\\"value\\";s:1:\\"1\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:8:\\"password\\";a:7:{s:4:\\"name\\";s:8:\\"password\\";s:4:\\"desc\\";s:87:\\"\\u0421\\u0435\\u043a\\u0440\\u0435\\u0442\\u043d\\u043e\\u0435 \\u0441\\u043b\\u043e\\u0432\\u043e (shopPassword) \\u0434\\u043b\\u044f \\u043e\\u0431\\u043c\\u0435\\u043d\\u0430 \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u044f\\u043c\\u0438\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:8:\\"testmode\\";a:7:{s:4:\\"name\\";s:8:\\"testmode\\";s:4:\\"desc\\";s:28:\\"\\u0422\\u0435\\u0441\\u0442\\u043e\\u0432\\u044b\\u0439 \\u0440\\u0435\\u0436\\u0438\\u043c?\\";s:4:\\"type\\";s:13:\\"combo-boolean\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";b:1;s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:6:\\"shopid\\";a:7:{s:4:\\"name\\";s:6:\\"shopid\\";s:4:\\"desc\\";s:96:\\"\\u0418\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u043e\\u0440 \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u043c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\\u0430 \\u0432 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441.\\u0414\\u0435\\u043d\\u044c\\u0433\\u0430\\u0445 (ShopID)\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:7:\\"account\\";a:7:{s:4:\\"name\\";s:7:\\"account\\";s:4:\\"desc\\";s:62:\\"\\u041d\\u043e\\u043c\\u0435\\u0440 \\u043a\\u043e\\u0448\\u0435\\u043b\\u044c\\u043a\\u0430 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441 (\\u0434\\u043b\\u044f \\u0444\\u0438\\u0437\\u043b\\u0438\\u0446)\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:4:\\"scid\\";a:7:{s:4:\\"name\\";s:4:\\"scid\\";s:4:\\"desc\\";s:109:\\"\\u0418\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u043e\\u0440 \\u0432\\u0438\\u0442\\u0440\\u0438\\u043d\\u044b \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u043c\\u0430\\u0433\\u0430\\u0437\\u0438\\u043d\\u0430 \\u0432 \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441.\\u0414\\u0435\\u043d\\u044c\\u0433\\u0430\\u0445 (scid)\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:15:\\"success_page_id\\";a:7:{s:4:\\"name\\";s:15:\\"success_page_id\\";s:4:\\"desc\\";s:72:\\"\\u0418\\u0414 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u044b \\"\\u0443\\u0434\\u0430\\u0447\\u043d\\u043e \\u0437\\u0430\\u0432\\u0435\\u0440\\u0448\\u0435\\u043d\\u043d\\u044b\\u0439 \\u043f\\u043b\\u0430\\u0442\\u0435\\u0436\\"\\";s:4:\\"type\\";s:11:\\"numberfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}s:12:\\"fail_page_id\\";a:7:{s:4:\\"name\\";s:12:\\"fail_page_id\\";s:4:\\"desc\\";s:76:\\"\\u0418\\u0414 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u044b \\"\\u043d\\u0435\\u0443\\u0434\\u0430\\u0447\\u043d\\u043e \\u0437\\u0430\\u0432\\u0435\\u0440\\u0448\\u0435\\u043d\\u043d\\u044b\\u0439 \\u043f\\u043b\\u0430\\u0442\\u0435\\u0436\\"\\";s:4:\\"type\\";s:11:\\"numberfield\\";s:7:\\"options\\";a:0:{}s:5:\\"value\\";s:0:\\"\\";s:7:\\"lexicon\\";N;s:4:\\"area\\";s:0:\\"\\";}}","moduleguid":"","static":0,"static_file":"","content":"$eventName = $modx->event->name;\\n$_isAdmin = ($modx->user->sudo == 1);\\n\\nif(!defined(\'YANDEXMONEY_PATH\')) define(\'YANDEXMONEY_PATH\', MODX_CORE_PATH.\\"components\\/yandexmoney\\/\\");\\nrequire_once YANDEXMONEY_PATH.\'model\\/yandexmoney.class.php\';\\n\\n$ym = new Yandexmoney($modx, $scriptProperties);\\n\\nif(!empty($_SESSION[\'shk_lastOrder\']) && !empty($_SESSION[\'shk_lastOrder\'][\'id\'])){\\n    $ym->pay_method = !empty($_SESSION[\'shk_lastOrder\'][\'payment\']) ? $_SESSION[\'shk_lastOrder\'][\'payment\'] : \'\';\\n    $order_id = (int)$_SESSION[\'shk_lastOrder\'][\'id\'];    \\n}\\nif (!empty($_POST[\'payment\'])){\\n\\t$ym->pay_method = $_POST[\'payment\'];\\n}\\n\\nif ($scriptProperties[\'action\']==\'showMethods\') {\\n\\t$org_mode = ($scriptProperties[\'mode\'] == 2);\\n\\t$output = $ym->getSelectHtml();\\n\\treturn $output;\\n}"}',
+        'guid' => '98b05bda75bcee240ea8ad9e1373d436',
+        'native_key' => 62,
+        'signature' => '034c818470fe8be6cad9cd6224253c40',
+      ),
+      '960a7ad68f53d4fda87aeee3affdcef3' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":63,"source":0,"property_preprocess":0,"name":"YandexMoneyHook","description":"YandexMoney Hook for FormIt","editor_type":0,"category":24,"cache_type":0,"snippet":"$eventName = $modx->event->name;\\n$_isAdmin = ($modx->user->sudo == 1);\\n\\nif(!defined(\'YANDEXMONEY_PATH\')) define(\'YANDEXMONEY_PATH\', MODX_CORE_PATH.\\"components\\/yandexmoney\\/\\");\\nrequire_once YANDEXMONEY_PATH.\'model\\/yandexmoney.class.php\';\\n\\n$snippet = $modx->getObject(\'modSnippet\',array(\'name\'=>\'YandexMoney\'));\\n$config = $snippet->getProperties();\\n\\n\\n\\n$ym = new Yandexmoney($modx, $config);\\n\\nif(!empty($_SESSION[\'shk_lastOrder\']) && !empty($_SESSION[\'shk_lastOrder\'][\'id\'])){\\n    $ym->pay_method = !empty($_SESSION[\'shk_lastOrder\'][\'payment\']) ? $_SESSION[\'shk_lastOrder\'][\'payment\'] : \'\';\\n    $order_id = (int)$_SESSION[\'shk_lastOrder\'][\'id\'];    \\n}\\nif (!empty($_POST[\'payment\'])){\\n\\t$ym->pay_method = $_POST[\'payment\'];\\n}\\nif (!$ym->checkPayMethod()){\\n\\treturn false;\\n}\\n\\n$modx->addPackage(\'shopkeeper\', MODX_CORE_PATH.\\"components\\/shopkeeper\\/model\\/\\");\\n$order = $modx->getObject(\'SHKorder\',array(\'id\'=>$order_id));\\nif (!$order){\\n return false;\\n}\\n$output = \'\';\\n\\nif ($order_id && $_POST[\'order\']){\\n    $ym->userId = $modx->getLoginUserID(\'web\') ? $modx->getLoginUserID(\'web\') : 0;\\n    $ym->orderId = $order_id;\\n    $ym->orderTotal = $_SESSION[\'shk_lastOrder\'][\'price\'];\\n    $ym->orderTotal = floatval(str_replace(array(\',\',\' \'), array(\'.\',\'\'), $ym->orderTotal));\\n    $ym->comment = $_POST[\'message\'];\\n\\n    $_host = str_replace(array(\'http:\\/\\/\', \'https:\\/\\/\'), \'\' , $modx->config[\'site_url\']);\\n    $host = \'https:\\/\\/\' . $_host . \'assets\\/components\\/yandexmoney\\/connector_result.php\';\\n    $ym->successUrl = $host.\'?success=1\';\\n    $ym->failUrl = $host.\'?fail=1\';\\n\\n    echo $ym->createFormHtml();\\n    exit;\\n\\n}\\n\\nreturn $output;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$eventName = $modx->event->name;\\n$_isAdmin = ($modx->user->sudo == 1);\\n\\nif(!defined(\'YANDEXMONEY_PATH\')) define(\'YANDEXMONEY_PATH\', MODX_CORE_PATH.\\"components\\/yandexmoney\\/\\");\\nrequire_once YANDEXMONEY_PATH.\'model\\/yandexmoney.class.php\';\\n\\n$snippet = $modx->getObject(\'modSnippet\',array(\'name\'=>\'YandexMoney\'));\\n$config = $snippet->getProperties();\\n\\n\\n\\n$ym = new Yandexmoney($modx, $config);\\n\\nif(!empty($_SESSION[\'shk_lastOrder\']) && !empty($_SESSION[\'shk_lastOrder\'][\'id\'])){\\n    $ym->pay_method = !empty($_SESSION[\'shk_lastOrder\'][\'payment\']) ? $_SESSION[\'shk_lastOrder\'][\'payment\'] : \'\';\\n    $order_id = (int)$_SESSION[\'shk_lastOrder\'][\'id\'];    \\n}\\nif (!empty($_POST[\'payment\'])){\\n\\t$ym->pay_method = $_POST[\'payment\'];\\n}\\nif (!$ym->checkPayMethod()){\\n\\treturn false;\\n}\\n\\n$modx->addPackage(\'shopkeeper\', MODX_CORE_PATH.\\"components\\/shopkeeper\\/model\\/\\");\\n$order = $modx->getObject(\'SHKorder\',array(\'id\'=>$order_id));\\nif (!$order){\\n return false;\\n}\\n$output = \'\';\\n\\nif ($order_id && $_POST[\'order\']){\\n    $ym->userId = $modx->getLoginUserID(\'web\') ? $modx->getLoginUserID(\'web\') : 0;\\n    $ym->orderId = $order_id;\\n    $ym->orderTotal = $_SESSION[\'shk_lastOrder\'][\'price\'];\\n    $ym->orderTotal = floatval(str_replace(array(\',\',\' \'), array(\'.\',\'\'), $ym->orderTotal));\\n    $ym->comment = $_POST[\'message\'];\\n\\n    $_host = str_replace(array(\'http:\\/\\/\', \'https:\\/\\/\'), \'\' , $modx->config[\'site_url\']);\\n    $host = \'https:\\/\\/\' . $_host . \'assets\\/components\\/yandexmoney\\/connector_result.php\';\\n    $ym->successUrl = $host.\'?success=1\';\\n    $ym->failUrl = $host.\'?fail=1\';\\n\\n    echo $ym->createFormHtml();\\n    exit;\\n\\n}\\n\\nreturn $output;"}',
+        'guid' => '8bfcbf29e31fc4c24b9964648fe2b0ad',
+        'native_key' => 63,
+        'signature' => 'b7d102697f129d59e8650362cfbf8ff8',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'yandexmoney',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"yandexmoney-1.0.1-beta1\\/modCategory\\/122e57bb012a25cc82749b26a9e30f96\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"yandexmoney"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"yandexmoney-1.0.1-beta1\\/modCategory\\/122e57bb012a25cc82749b26a9e30f96\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"yandexmoney"}',
+    ),
+    2 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"yandexmoney-1.0.1-beta1\\/modCategory\\/122e57bb012a25cc82749b26a9e30f96\\/2\\/","target":"return \\"\\".MODX_ASSETS_PATH.\\"\\/components\\/\\";","name":"yandexmoney"}',
+    ),
+    3 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"yandexmoney-1.0.1-beta1\\/modCategory\\/122e57bb012a25cc82749b26a9e30f96\\/3\\/","target":"return \\"\\".MODX_CORE_PATH.\\"\\/components\\/\\";","name":"yandexmoney"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '1ad0290418f86e80ff3f51cfdc345c2b',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '122e57bb012a25cc82749b26a9e30f96',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"YandexMoney"}',
+);
