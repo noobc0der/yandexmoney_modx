@@ -49,6 +49,7 @@ class Yandexmoney {
 	public $method_cash;
 	public $method_mobile;
 	public $method_wm;
+	public $method_ab;
 
 	public $pay_method;
     
@@ -119,7 +120,7 @@ class Yandexmoney {
 	}
 
 	public function checkPayMethod(){
-		if ($this->pay_method == 'PC' || $this->pay_method == 'AC' || $this->pay_method == 'GP' || $this->pay_method == 'MC' || $this->pay_method == 'WM'){
+		if ($this->pay_method == 'PC' || $this->pay_method == 'AC' || $this->pay_method == 'GP' || $this->pay_method == 'MC' || $this->pay_method == 'AB' || $this->pay_method == 'WM'){
 			return TRUE;
 		}else{
 			return FALSE;
@@ -154,6 +155,13 @@ class Yandexmoney {
 				$output.=' selected ';
 			}
 			$output .= '>оплата со счета мобильного телефона</option>';
+		}
+		if ($this->method_ab == 1 &&  $this->org_mode) {
+			$output .= '<option value="ABB"';
+			if ($this->pay_method == 'AB'){
+				$output.=' selected ';
+			}
+			$output .= '>Альфаклик/option>';
 		}
 		if ($this->method_wm == 1 &&  $this->org_mode) {
 			$output .= '<option value="WM"';
