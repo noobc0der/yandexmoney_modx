@@ -50,6 +50,7 @@ class Yandexmoney {
 	public $method_mobile;
 	public $method_wm;
 	public $method_ab;
+	public $method_sb;
 
 	public $pay_method;
     
@@ -163,7 +164,13 @@ class Yandexmoney {
 			}
 			$output .= '>Альфаклик</option>';
 		}
-		if ($this->method_wm == 1 &&  $this->org_mode) {
+		if ($this->method_sb == 1 &&  $this->org_mode) {
+			$output .= '<option value="SB"';
+			if ($this->pay_method == 'SB'){
+				$output.=' selected ';
+			}
+			$output .= '>Сбербанк Онлайн</option>';
+		}		if ($this->method_wm == 1 &&  $this->org_mode) {
 			$output .= '<option value="WM"';
 			if ($this->pay_method == 'WM'){
 				$output.=' selected ';
